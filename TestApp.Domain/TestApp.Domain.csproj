@@ -53,9 +53,10 @@
     <Compile Include="Entities\Student.cs" />
     <Compile Include="Entities\Teacher.cs" />
     <Compile Include="Interfaces\IRepository.cs" />
-    <Compile Include="Migrations\201804301543373_Initial.cs" />
-    <Compile Include="Migrations\201804301543373_Initial.Designer.cs">
-      <DependentUpon>201804301543373_Initial.cs</DependentUpon>
+    <Compile Include="Interfaces\IUnitOfWork.cs" />
+    <Compile Include="Migrations\201805010621483_Init.cs" />
+    <Compile Include="Migrations\201805010621483_Init.Designer.cs">
+      <DependentUpon>201805010621483_Init.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -70,10 +71,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201804301543373_Initial.resx">
-      <DependentUpon>201804301543373_Initial.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201805010621483_Init.resx">
+      <DependentUpon>201805010621483_Init.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

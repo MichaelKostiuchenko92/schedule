@@ -35,7 +35,7 @@ namespace TestApp.Domain.Repositories
 
         public IEnumerable<Student> GetAll()
         {
-            return _context.Students;
+            return _context.Students.ToList();
         }
 
         public void Update(Student item)

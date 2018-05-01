@@ -3,14 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TestApp.Domain.Entities;
+using TestApp.Domain.Interfaces;
 using TestApp.Domain.Repositories;
 
 namespace TestApp.Domain
 {
-    public class UnitOfWork : IDisposable
+    public class UnitOfWork : IUnitOfWork
 
     {
-        private Context _db = new Context();
+        private Context _db;
         private StudentRepository studentRepository;
         private TeacherRepository teacherRepository;
         private FacultyRepository facultyRepository;
@@ -18,7 +20,12 @@ namespace TestApp.Domain
 
         private bool disposed = false;
 
-        public StudentRepository Students
+        public UnitOfWork()
+        {
+            _db = new Context();
+        }
+
+        public IRepository<Student> Students
         {
             get
             {
@@ -30,7 +37,7 @@ namespace TestApp.Domain
             }
         }
 
-        public TeacherRepository Teachers
+        public IRepository<Teacher> Teachers
         {
             get
             {
@@ -43,7 +50,7 @@ namespace TestApp.Domain
 
         }
 
-        public FacultyRepository Facultys
+        public IRepository<Faculty> Facultys
         {
             get
             {
@@ -55,7 +62,7 @@ namespace TestApp.Domain
             }
         }
 
-        public SpecialtyRepository Specialtys
+        public IRepository<Specialty> Specialtys
         {
             get
             {
