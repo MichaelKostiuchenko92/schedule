@@ -3,7 +3,7 @@ namespace TestApp.Domain.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class Init : DbMigration
+    public partial class Initial : DbMigration
     {
         public override void Up()
         {
@@ -35,7 +35,7 @@ namespace TestApp.Domain.Migrations
                         Id = c.Int(nullable: false, identity: true),
                         FirstName = c.String(),
                         LastName = c.String(),
-                        DateOfBirth = c.DateTime(nullable: false),
+                        DateOfBirth = c.DateTime(),
                         SpecialityId = c.Int(),
                         Specialty_Id = c.Int(),
                     })

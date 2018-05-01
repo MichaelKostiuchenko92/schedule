@@ -17,6 +17,7 @@ namespace TestApp.BLL.Infrastructure
         public override void Load()
         {
             Bind<IValueResolver<StudentView, Student, bool>>();
+            Bind<IValueResolver<TeacherView, Teacher, bool>>();
 
             var mapperConfiguration = CreateConfiguration();
             Bind<MapperConfiguration>().ToConstant(mapperConfiguration).InSingletonScope();
@@ -31,6 +32,7 @@ namespace TestApp.BLL.Infrastructure
             {
                 // Add all profiles in current assembly
                 cfg.AddProfile(new StudentMappingProfile());
+                cfg.AddProfile(new TeacherMappingProfile());
             });
 
             return config;

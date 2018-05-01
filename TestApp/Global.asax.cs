@@ -26,7 +26,8 @@ namespace TestApp
             NinjectModule serviceModule = new ServiceModule("connection");
             NinjectModule studentModule = new StudentModule();
             NinjectModule mapperModule = new AutoMapperModule();
-            var kernel = new StandardKernel(studentModule, serviceModule, mapperModule);
+            NinjectModule teacherModule = new TeacherModule();
+            var kernel = new StandardKernel(studentModule, serviceModule, mapperModule, teacherModule);
             DependencyResolver.SetResolver(new NinjectDependencyResolver(kernel));
         }
     }

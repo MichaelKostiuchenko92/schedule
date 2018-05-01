@@ -42,16 +42,9 @@ namespace TestApp.Controllers
         [HttpPost]
         public ActionResult Create(StudentView studentView)
         {
-            try
-            {
-                _service.CreateStudent(studentView);
 
+                _service.CreateStudent(studentView);
                 return RedirectToAction("Index");
-            }
-            catch   
-            {
-                return View();
-            }
         }
 
         // GET: Student/Edit/5
@@ -81,9 +74,8 @@ namespace TestApp.Controllers
             }
         }
 
-
         // POST: Student/Delete/5
-        [HttpPost]
+        [HttpGet]
         public ActionResult Delete(int id)
         {
                 _service.DeleteStudent(id);
